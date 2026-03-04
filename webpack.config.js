@@ -17,4 +17,13 @@ export default {
   devServer: {
     watchFiles: ["./src/template.html"], // Forces a reload when you edit HTML
   },
+  // ADD THIS SECTION BELOW:
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
 };
