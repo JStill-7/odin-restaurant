@@ -1,40 +1,65 @@
-/* * {
-    margin: 0;
-}
-
-.home-container {
-    background-color: darkslategray;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    border: 2px solid salmon;
-}
-
-h1 { 
-    border: 2px solid black;
-}
-
-.head-line-conatiner {
-    border: 2px solid rgb(144, 49, 49);
-}
-
-#headline {
-
-} */
 
 * {
     margin: 0;
+    /* background-image: url('alien_landing.png'); */
+}
+
+/* scan line effect*/
+body::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* This creates the thin horizontal lines */
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+              linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 10; /* Put it above the background but below the text if you want */
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none; /* This ensures you can still click buttons through it! */
 }
 
 nav {
     display: flex;
-    gap: 1;
-    justify-content: flex-end;
+    gap: 60px;
+    justify-content: center;
     border: 2px solid blueviolet;
+    height: 80px;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    
 
     
+}
+
+/* nav > button {
+    width: 150px;
+    border: 2px solid green;
+    font-family:Orbitron, sans-serif;
+} */
+
+nav button {
+    font-family:Orbitron, sans-serif;
+    background: rgba(0, 255, 65, 0.1); /* Very faint green tint */
+    border: 1px solid #00ff41;
+    color: #00ff41;
+    padding: 10px 20px;
+    font-family: 'Courier New', Courier, monospace; /* Or a techy font */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%); /* Angled edges */
+    transition: all 0.3s ease;
+    width: 150px;
+}
+
+nav button:hover {
+    background: #00ff41;
+    color: black;
+    box-shadow: 0 0 15px #00ff41;
 }
 
 #content {
@@ -47,12 +72,15 @@ nav {
 .home-container {
     display: flex;
     flex-direction: column;
-    align-items: center;    /* Centers horizontally */
-    justify-content: flex-start; /* Keeps items at the TOP */
-    padding-top: 50px;      /* Gives it some breathing room from the nav */
-    flex: 1;                /* Makes this container fill the available space */
-    background-color: darkslategrey;
-    border: 2px solid black;
+    /* This pushes everything to the right side of the screen */
+    align-items: flex-end; 
+    
+    /* This adds space so it doesn't touch the very edge */
+    padding-right: 10%; 
+    padding-top: 80px;
+    
+    /* Ensure it takes up the full screen height */
+    min-height: 100vh;
 }
 
 .head-line-container {
@@ -62,7 +90,37 @@ nav {
 }
 
 #headline {
-    font-size: 4rem;
-    color: #000000; /* "Matrix/UFO" Green? */
+    font-size: 6rem;
+    color: #159b24; /* "Matrix/UFO" Green? */
     text-transform: uppercase;
+    font-family:Orbitron, sans-serif;
+
+    /* You can even add a neon glow here */
+    text-shadow: 0 0 10px #00ff41;
 }
+
+.subtitleTag {
+    border: 2px solid pink;
+    margin-top: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgba(0, 255, 65, 0.7); /* Slightly transparent green */
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-align: right; /* Keeps it aligned with your off-center title */
+}
+
+
+/* will look at later */
+
+/* @keyframes flicker {
+  0% { opacity: 0.97; }
+  5% { opacity: 0.95; }
+  10% { opacity: 0.9; }
+  15% { opacity: 0.99; }
+  20% { opacity: 0.95; }
+  100% { opacity: 1; }
+}
+
+#headline {
+    animation: flicker 0.15s infinite;
+} */
