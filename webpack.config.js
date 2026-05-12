@@ -5,7 +5,7 @@ export default {
   mode: "development",
   entry: "./src/index.js",
   output: {
-    filename: "main.js", // Renamed to avoid confusion with src/index.js
+    filename: "main.js", 
     path: path.resolve(import.meta.dirname, "dist"),
     clean: true,
   },
@@ -17,7 +17,7 @@ export default {
   devServer: {
     watchFiles: ["./src/template.html"], // Forces a reload when you edit HTML
   },
-  // ADD THIS SECTION BELOW:
+  
   module: {
     rules: [
       {

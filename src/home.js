@@ -16,7 +16,7 @@ export function loadHome() {
 
     homeWrapper.style.backgroundSize = "cover";
     homeWrapper.style.backgroundPosition = "center";
-    homeWrapper.style.height = "100vh"; // Make sure it covers the screen
+    homeWrapper.style.height = "100vh"; 
 
 
 
@@ -34,21 +34,28 @@ export function loadHome() {
     //sub title tag
     const subtitleTag = document.createElement('div');
     subtitleTag.classList.add('subtitleTag');
-    const fluff = document.createElement('p');
-    fluff.textContent = 'TRANSMISSION STATUS: ENCRYPTED';
+
+    const fluff1 = document.createElement('p');
+    fluff1.innerHTML = `<span class="dim">ORIGIN:</span> SECTOR 7G`;
+
+    const fluff2 = document.createElement('p');
+    fluff2.innerHTML = '<span class="dim">STATUS </span>FUEL: LOW';
+
+    const fluff3 = document.createElement('p');
+    fluff3.innerHTML = '<span class="dim">ENTRY:</span> 04:00 SEC'
 
 
 
-    // 3. Append the children to the WRAPPER
+    // Append the children to the WRAPPER
     headlineWrapper.appendChild(headline);
     homeWrapper.appendChild(headlineWrapper);
     headlineWrapper.appendChild(subtitleTag);
-    subtitleTag.appendChild(fluff);
+    subtitleTag.appendChild(fluff1);
+    subtitleTag.appendChild(fluff2);
+    subtitleTag.appendChild(fluff3);
 
 
-    // 4. Finally, append the WRAPPER to the main #content div
     content.appendChild(homeWrapper);
-    // alienHome.apppendChild(homeWrapper)
-  
+
 }
 
